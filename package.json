@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/IgorColetoBueno/Node/issues"
   },
-  "homepage": "https://github.com/IgorColetoBueno/Node#readme"
+  "homepage": "https://github.com/IgorColetoBueno/Node#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
