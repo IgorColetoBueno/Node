@@ -1,9 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/hello', function (req, res) {
-    res.json({
-        message: 'Hello world!'
+router.use(function (req, res, next) {
+    console.log('Hello World by Igor!');
+    next();
+});
+
+router.get('/', function (req, res) {
+    res.render('index',{
+        message:'Hello World for Template Engine'
     });
 });
 
@@ -16,13 +21,13 @@ router.get('/params/:name', function (req, res) {
         })
 });
 
-router.post('/body', function(req,res){
-     res.json(req.body);
+router.post('/body', function (req, res) {
+    res.json(req.body);
 });
 
-router.get('/res/:name', function(req,res){
+router.get('/res/:name', function (req, res) {
     res.json({
-        name:req.params.name
+        name: req.params.name
     });
 });
 module.exports = router;
